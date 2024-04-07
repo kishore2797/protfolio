@@ -14,7 +14,7 @@ const Home = () => {
             alt="Tanuja portrait"
             width="192"
             height="192"
-            quality="80"
+            // quality="80"
             priority="true"
             className='h-24 w-24 rounded-full object-cover border-[.35rem] border-white shadow-xl'
           />
@@ -54,16 +54,16 @@ const Home = () => {
           </Link>
 
           <a
-            className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+            className="ms-5 group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack"
             href="/CV.pdf"
-            download
+            download="CV"
           >
             Download CV{" "}
             <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
           </a>
 
           <a
-            className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlac"
+            className="ms-5 bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlac"
             href="https://linkedin.com"
             target="_blank"
           >

@@ -4,6 +4,8 @@ import shopify from './shopify.png'
 import starbucks from './starbucks.png'
 import tesla from './tesla.png'
 import logo from './logo.svg'
+import profile_img from './profile_img.jpeg'
+import entoo from './entoo.jpg'
 
 export {
     hero,
@@ -11,5 +13,7 @@ export {
     shopify,
     starbucks,
     tesla,
-    logo
+    logo,
+    profile_img,
+    entoo
 }

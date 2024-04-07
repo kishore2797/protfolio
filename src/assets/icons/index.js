@@ -26,6 +26,12 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import java from './java.svg'
+import spring_boot from './spring_boot.svg'
+import hrms from "./hrms.png"
+import ams from "./ams.png"
+import penalty from "./penalty.png"
+import digitization from "./digitization.png"
 
 export {
     css,
@@ -55,5 +61,11 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    java,
+    spring_boot,
+    hrms,
+    ams,
+    penalty,
+    digitization
 }

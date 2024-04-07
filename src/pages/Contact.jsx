@@ -57,9 +57,9 @@ const Contact = () => {
   return (
     <section className='relative flex flex-col max-container h-full'>
       {alert.show && <Alert {...alert}/>}
-      <div className='mt-2 flex-1 min-w-[50%] flex flex-col'>
+      <div className=' flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
-        <form className='w-full flex flex-col gap-7 mt-14'
+        <form className='w-full flex flex-col gap-7 mt-8'
           onSubmit={handleSubmit}
         >
           <label className='text-black-500 font-semibold'>

@@ -12,7 +12,7 @@ const Projects = () => {
       </h1>
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          I've embarked on numerous projects throughout the years, but these are the ones I hold closest to myheart. Many of them are open-source, so if you comeacross something that piques your interest, feel freeto explore the codebase and contribute your ideasfor further enhancements. Your collaboration is highly valued!
+          I've embarked on numerous projects throughout the year, but only authorized individuals within the organization or company that owns the project have access to the source code. So below I've explained each module usecases that I've developed.
         </p>
       </div>
       <div className='flex flex-wrap my-20 gap-16'>
@@ -25,14 +25,14 @@ const Projects = () => {
                   <img
                     src={project.iconUrl}
                     alt='Project Icon'
-                    className='w-1/2 h-1/2 object-contain'
+                    className='w-1/2 h-1/2 object-contain color-white'
                   />
                 </div>
               </div>
               <div className='mt-5 flex flex-col'>
                 <h4 className='text-2xl font-poppins font-semibold'>{project.name}</h4>
                 <p className='mt-2 text-slate-500'>{project.description}</p>
-                <div className='mt-5 flex items-center gap-2 font-poppins'>
+                {/* <div className='mt-5 flex items-center gap-2 font-poppins'>
                   <Link to={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -43,7 +43,7 @@ const Projects = () => {
                     alt='arrow'
                     className='w-4 h-4 object-contain'
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           ))

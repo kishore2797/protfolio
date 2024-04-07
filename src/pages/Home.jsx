@@ -1,101 +1,84 @@
 import React from 'react'
-import { skills, experiences } from "../constants";
-
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import CTA from '../components/CTA';
-
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import { FaGithubSquare } from "react-icons/fa";
+import { Link } from 'react-router-dom'
+import { profile_img } from "../assets/images"
 const Home = () => {
   return (
-    <section className='max-container'>
-      <h1 className='head-text'>
-        Hello, I'm <span className='blue-gradient_text font-semibold drop-shadow'>Tanuja</span>
-      </h1>
-      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>
-          Software Engineer based in India, specializing in technical education through hands-on learning and building applications.
-        </p>
-      </div>
-      <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text'>My Skills</h3>
+    <section className='max-container h-full'>
+      <div className='flex flex-col items-center justify-center'>
+        <div className='relative'>
+          <img
+            src={profile_img}
+            alt="Tanuja portrait"
+            width="192"
+            height="192"
+            quality="80"
+            priority="true"
+            className='h-24 w-24 rounded-full object-cover border-[.35rem] border-white shadow-xl'
+          />
+          <span className='absolute bottom-0 right-0 text-4xl'>
+            👋
+          </span>
+        </div>
+        <h1
+          className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <span className="font-bold">Hello, I'm Tanuja</span> I'm a{" "}
+          <span className="font-bold">backend developer</span> with{" "}
+          <span className="font-bold">1.3+ years</span> of experience. I enjoy
+          crafting <span className="italic">RESTful APIs and microservices</span>. My focus is{" "}
+          <span className="underline">Spring Boot & Java</span>.
+        </h1>
 
-        <div className='mt-16 flex flex-wrap gap-12'>
-          {skills.map((skill) => (
-            <div className='block-container w-20 h-20'>
-              <div className='btn-back rounded-xl' />
-              <div className='btn-front rounded-xl flex justify-center items-center'>
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className='w-1/2 h-1/2 object-contain'
-                />
-              </div>
-            </div>
-          ))}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.1,
+          }}
+        >
+          <Link
+            to="/contact"
+            className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+            onClick={() => {
+
+            }}
+          >
+            Contact me here{" "}
+            <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          </Link>
+
+          <a
+            className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+            href="/CV.pdf"
+            download
+          >
+            Download CV{" "}
+            <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          </a>
+
+          <a
+            className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlac"
+            href="https://linkedin.com"
+            target="_blank"
+          >
+            <BsLinkedin />
+          </a>
+
+          {/* <a
+            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack "
+            href="https://github.com"
+            target="_blank"
+          >
+            <FaGithubSquare />
+          </a> */}
         </div>
       </div>
-      <div className='py-16'>
-        <h3 className='subhead-text'>My Skills</h3>
-        <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-          <p>
-            I've worked with all sorts of companies, leveling up my skills and teaming up with smart people. Here's the rundown:
-          </p>
-        </div>
-        <div className='mt-12 flex'>
-          <VerticalTimeline>
-            {
-              experiences.map((experience) => (
-                <VerticalTimelineElement
-                  key={experience.company_name}
-                  date={experience.date}
-                  icon={
-                    <div className='flex justify-center items-center w-full h-full'>
-                      <img
-                        src={experience.icon}
-                        alt={experience.company_name}
-                        className='w-[60%] h-[60%] object-contain'
-                      />
-                    </div>
-                  }
-                  iconStyle={
-                    {
-                      background: experience.iconBg
-                    }
-                  }
-                  contentStyle={
-                    {
-                      borderBottom: '8px',
-                      borderStyle: "solid",
-                      borderBottomColor: experience.iconBg,
-                      boxShadow: 'none'
-                    }
-                  }
-                >
-                  <div>
-                    <h3 className='text-black text-xl font-poppins font-semibold'>{experience.title}</h3>
-                    <p className='text-black-500 font-medium font-base'
-                      style={{ margin: 0 }}
-                    >
-                      {experience.company_name}
-                    </p>
-                    <ul className='my-15 list-disc ml-5 space-y-2'>
-                      {
-                        experience.points.map((point, index) => (
-                          <li key={`experience-point-${index}`} className='text-black-500/50 font-normal pl-1 text-sm'>
-                            {point}
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  </div>
-                </VerticalTimelineElement>
-              ))
-            }
-          </VerticalTimeline>
-        </div>
-      </div>
-      <hr className='border-slate-200'/>
-      <CTA/>
     </section>
   )
 }
